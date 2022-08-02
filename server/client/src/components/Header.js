@@ -12,16 +12,16 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login with Google</a>
+            <a href='/auth/google'>Login with Google</a>
           </li>
         );
       default:
         return [
-          <li>
+          <li key='1'>
             <Payments />
           </li>,
-          <li>
-            <a href="/api/logout">Logout</a>
+          <li key='2'>
+            <a href='/api/logout'>Logout</a>
           </li>
         ];
     }
@@ -30,14 +30,14 @@ class Header extends Component {
   render () {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className='nav-wrapper'>
           <Link
             to={this.props.auth ? '/surveys' : '/'}
-            className="left brand-logo"
+            className='left brand-logo'
           >
             Emaily
           </Link>
-          <ul className="right">{this.renderContent()}</ul>
+          <ul className='right'>{this.renderContent()}</ul>
         </div>
       </nav>
     );
